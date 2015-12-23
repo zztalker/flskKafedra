@@ -8,7 +8,7 @@
     <div class="pure-g">
 		{% for lecturer in lecturers %}
             <div class='pure-u-1 pure-u-md-1-4	 lecturerPreview'>
-            <a id="lecturer-preview-link" href="#" data-toggle="modal" data-target="#myModal" lecturer-id="{{ lecturer.id }}">
+            <a class="lecturer-preview-link" href="#" data-toggle="modal" data-target="#myModal" lecturer-id="{{ lecturer.id }}">
                 <img class="pure-img" src="{{ lecturer.img_url }}">
                 <p>{{ lecturer.second_name }} {{ lecturer.first_name[0] }}. {{ lecturer.middle_name[0] }}.</p>
 				<p class="ligthtext">
@@ -22,10 +22,9 @@
 	</div>
     
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	keke)
+
 </div>
+
 {% endblock %}
-
-
 
 <!-- "lecturers/{{ lecturer.second_name }} {{ lecturer.first_name[0] }}. {{ lecturer.middle_name[0] }}."  -->

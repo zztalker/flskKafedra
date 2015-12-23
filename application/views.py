@@ -3,10 +3,12 @@ import json
 
 from application import app, SessionSQL
 from application.models import *
+from application.nocache import nocache
 
 
 @app.route('/')
 @app.route('/index')
+@nocache
 def board():
     # from application.controllers import board
     # board.print_lecturers()
@@ -55,3 +57,9 @@ def lecturer_img(dir_name, img_url):
     shutil.copy(img_url, "application/static/img/lecturers/"+dir_name+"/photo.jpg")
     new_url = "static/img/lecturers/"+dir_name+"/photo.jpg"
     return new_url
+
+@app.route("/lecturer_modal/<id>")
+def lecturer_modal(id):
+    lecturer = Lecturer.query.get(id)
+    print(lecturer.first_name)
+    return render_template("lecturers/modal.html", lecturer = lecturer)
