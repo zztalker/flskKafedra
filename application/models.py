@@ -16,6 +16,7 @@ class Lecturer(db.Model):
     first_name = db.Column(db.String(64))
     second_name = db.Column(db.String(64))
     middle_name = db.Column(db.String(64))
+    description = db.Column(db.String)
     email = db.Column(db.String(64), unique = True)
     disciplines = db.relationship('Discipline', secondary = disciplines_lecturers,
                                   backref = db.backref('lecturers', lazy='dynamic'))

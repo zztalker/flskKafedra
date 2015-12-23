@@ -1,9 +1,12 @@
 # Мой файл для тестирования sqlite3-базы
 
-import sqlite3
+from application import SessionSQL
+from application.models import *
+s = SessionSQL()
 
-db = sqlite3.connect('app.db')
-cur = db.cursor()
-cur.execute('SELECT * FROM lecturer')
-fall = cur.fetchall()
-print(fall)
+# Удаление лекторов:
+lecturers = s.query(Lecturer).all()
+for lecturer in lecturers:
+	s.delete(lecturer)
+
+s.commit()
