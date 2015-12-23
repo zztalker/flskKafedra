@@ -9,7 +9,6 @@ class MyTCPHandler(socketserver.StreamRequestHandler):
     override the handle() method to implement communication to the
     client.
     """
-    'okay'
 
     def handle(self):
         # self.request is the TCP socket connected to the client

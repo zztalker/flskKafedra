@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div id="board" class='container'>
+    <div class="page-header change"><h1>Учебная доска</h1></div>
+    <h2>Наши преподаватели:</h2>
+    <div class="pure-g">
+		{% for lecturer in lecturers %}
+            <div class='pure-u-1 pure-u-md-1-4	 lecturerPreview'>
+            <a id="lecturer-preview-link" href="#" data-toggle="modal" data-target="#myModal" lecturer-id="{{ lecturer.id }}">
+                <img class='pure-img' src='{{ lecturer.img_url }}'>
+                <p>{{ lecturer.second_name }} {{ lecturer.first_name[0] }}. {{ lecturer.middle_name[0] }}.</p>
+				<p class="ligthtext">
+					{% for discipline in lecturer.disciplines %}
+						{{ discipline.title }}{% if not loop.last %},{% endif %}
+					{% endfor %}
+				</p>
+			</a>
+			</div>
+        {% endfor %}
+	</div>
+    
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+</div>
+{% endblock %}
+
+
+
+<!-- "lecturers/{{ lecturer.second_name }} {{ lecturer.first_name[0] }}. {{ lecturer.middle_name[0] }}."  -->
