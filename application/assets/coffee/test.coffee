@@ -1,2 +1,2 @@
 $(document).ready ->
-    alert('im ready.')
+    # alert('im ready.')

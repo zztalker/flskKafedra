@@ -1,5 +1,6 @@
-from application.controllers import *
 from application import SessionSQL
+from application.controllers import *
+from application.models import board
 
 from flask import request
 import json
@@ -14,7 +15,7 @@ def lecturers_update():
     j = json.loads(d)
     s = SessionSQL()
 
-    lecturers_sname = s.query(Lecturer.second_name).all()
+    lecturers_sname = s.query(board.Lecturer.second_name).all()
     for i in range(0, len(lecturers_sname)):
         #каждый из sname - массив с одним элементом, поэтому его нужно превратить строку:
         lecturers_sname[i] = lecturers_sname[i][0]
@@ -30,7 +31,7 @@ def lecturers_update():
             img_url = lecturer[1]["Photo"]["FileName"]
             img_url = lecturer_img(lecturer[0], img_url)
 
-            lecturer_model = Lecturer(first_name = first_name, second_name = second_name,
+            lecturer_model = board.Lecturer(first_name = first_name, second_name = second_name,
                 middle_name = middle_name, description = description, img_url = img_url)
             s.add(lecturer_model)
     s.commit()
@@ -38,6 +39,8 @@ def lecturers_update():
 
 def lecturer_img(dir_name, img_url):
     import shutil, os
+    from trans import trans
+    dir_name = trans(dir_name)
     try:
         os.mkdir("application/static/img/lecturers/"+dir_name)
     except FileExistsError:

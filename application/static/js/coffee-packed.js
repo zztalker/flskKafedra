@@ -1,3 +1,1 @@
-$(document).ready(function() {
-  return alert('im ready.');
-});
+$(document).ready(function() {});

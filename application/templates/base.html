@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>{% block page_title %}{% endblock %} - Кафедра ИВТ</title>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon">
+	<title>{% block title %}{% endblock %} - Кафедра ИВТ</title>
 
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -21,6 +22,10 @@
 			{% include "main_header.html" %}
 		{% endblock %}
 	</span>
+	<span id="content">
+		{% block content %}
+		{% endblock %}
+	</span>
 	<span id="main_footer" class="container">
 		{% block main_footer %}
 			{% include "main_footer.html" %}
@@ -28,7 +33,7 @@
 	</span>
 
 	{% assets "coffee_all" %}
-		<script src="{{ ASSET_URL }}">
+		<script src="{{ ASSET_URL }}"></script>
 	{% endassets %}
 	<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
