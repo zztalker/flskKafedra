@@ -1,0 +1,46 @@
+@charset "UTF-8";
+/* HEADER */
+/* line 2 */
+#navBarBrand {
+  color: red;
+  padding-left: 0px;
+}
+
+/* line 8 */
+#navBar .container {
+  margin-left: 5% !important;
+  /*margin-right: 50% !important;*/
+  width: 90vw;
+  /* 93 - margin-left/2 c ╨╛╨║╤А╤Г╨│╨╗. ╨▓╨▓╨╡╤А╤Е */
+}
+
+/* CONTENT */
+/* line 15 */
+.page-header.change {
+  margin-top: -1em;
+}
+
+/* line 19 */
+#infoMap {
+  text-align: right;
+  float: right;
+}
+
+/* line 24 */
+#indexLogo {
+  display: block;
+  float: right;
+  width: 20vw;
+}
+
+/* FOOTER */
+/* line 31 */
+#main_footer {
+  font-size: 8pt;
+  display: block;
+  margin-top: 1em;
+  padding-top: 1em;
+  color: gray;
+  border-top: 1px solid #ebebeb;
+  text-align: right;
+}

@@ -7,7 +7,7 @@
     <h2>Наши преподаватели:</h2>
     <div class="pure-g">
 		{% for lecturer in lecturers %}
-            <div class='pure-u-1 pure-u-md-1-4	 lecturerPreview'>
+            <div class='pure-u-1 pure-u-md-1-4 lecturer-preview'>
             <a class="lecturer-preview-link" href="#" data-toggle="modal" data-target="#myModal" lecturer-id="{{ lecturer.id }}">
                 <img class="pure-img" src="{{ lecturer.img_url }}">
                 <p>{{ lecturer.second_name }} {{ lecturer.first_name[0] }}. {{ lecturer.middle_name[0] }}.</p>

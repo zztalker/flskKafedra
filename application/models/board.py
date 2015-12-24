@@ -1,4 +1,4 @@
-from application import db
+from application.models import *
 
 disciplines_lecturers = db.Table('disciplines_lecturers',
     db.Column('discipline_id', db.Integer, db.ForeignKey('discipline.id')),
