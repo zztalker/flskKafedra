@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>{% block page_title %}{% endblock %} - ГосСлужБес</title>
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon">
+	<title>{% block title %}{% endblock %} - Кафедра ИВТ</title>
 
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
-	<!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+	<script src="{{ url_for('static', filename='js/loadingoverlay.min.js') }}"></script>
+
+	{% assets "scss_all" %}
+		<link rel=stylesheet type=text/css href="{{ ASSET_URL }}">
+	{% endassets %}
+
 </head>
 <body>
 	<span id="main_header">
@@ -13,20 +23,19 @@
 			{% include "main_header.html" %}
 		{% endblock %}
 	</span>
-	<div id="content">
-		{% block content %} 
-		<p>Добро Пожаловать на сайт Государственной Службы Безопасности! Мы знали, что Вы придёте.</p> 
+	<span id="content">
+		{% block content %}
 		{% endblock %}
-	</div>
+	</span>
 	<span id="main_footer" class="container">
 		{% block main_footer %}
 			{% include "main_footer.html" %}
 		{% endblock %}
 	</span>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
-	<script src="{{ url_for('static', filename='js/loadingoverlay.min.js') }}"></script>
+	{% assets "coffee_all" %}
+		<script src="{{ ASSET_URL }}"></script>
+	{% endassets %}
 	<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
