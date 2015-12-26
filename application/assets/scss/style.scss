@@ -38,6 +38,19 @@
     text-align: right;
 }
 
-#lecturer-preview {
-    
+
+.lecturer-preview div img {
+    /*width: 10%;    */
+    height: 30vh;
+}
+
+.lecturer-table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.modal-body div img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }

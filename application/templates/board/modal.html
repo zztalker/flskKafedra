@@ -2,14 +2,19 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Название модали</h4>
+        <h4 class="modal-title" id="myModalLabel">Подробнее</h4>
       </div>
       <div class="modal-body">
-        {{ lecturer.second_name }}
+        <div class="text-center">
+        <h2>{{ lecturer.second_name }} {{ lecturer.first_name }} {{ lecturer.middle_name }}</h2>
+        <img class="pure-img" src="{{ lecturer.img_url }}">
+        </div>
+        <br><br>
+        <p>{{ lecturer.description }}</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
-        <button type="button" class="btn btn-primary">Сохранить изменения</button>
+        <button type="button" class="btn btn-primary">Профиль</button>
       </div>
     </div>
   </div>
