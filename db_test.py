@@ -1,5 +1,5 @@
 # Мой файл для тестирования sqlite3-базы
-
+# coding=utf8
 from application import SessionSQL
 from application.models import *
 s = SessionSQL()

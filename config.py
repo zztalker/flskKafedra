@@ -1,3 +1,4 @@
+# coding=utf8
 CSRF_ENABLED = True	# активирует предотвращение поддельных межсайтовых запросов
 CSRF_SESSION_KEY = "secret"
 SECRET_KEY = 'you-will-never-guess'	# криптографический токен при валидации формы

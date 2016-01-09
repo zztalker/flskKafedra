@@ -1,3 +1,4 @@
+# coding=utf8
 import os, json
 import hashlib
 import urllib.request, urllib.parse

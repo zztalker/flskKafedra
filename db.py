@@ -1,3 +1,4 @@
+# coding=utf8
 #!flask/bin/python
 
 # Скрипт универсален, его настройки берутся из config.py
