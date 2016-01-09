@@ -1,3 +1,4 @@
+# coding=utf8
 from application.models import *
 
 disciplines_lecturers = db.Table('disciplines_lecturers',

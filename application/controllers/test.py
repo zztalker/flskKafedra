@@ -1,3 +1,4 @@
+# coding=utf8
 from application import SessionSQL
 from application.controllers import *
 from application.models import board

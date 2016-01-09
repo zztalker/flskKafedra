@@ -1,3 +1,4 @@
+# coding=utf8
 from flask import make_response
 from functools import wraps, update_wrapper
 from datetime import datetime

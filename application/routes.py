@@ -1,4 +1,5 @@
-from flask import render_template
+# coding=utf8
+# from flask import render_template
 
 from application import app
 from application.nocache import nocache
